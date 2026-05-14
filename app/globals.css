@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 99, 102, 241;
+    --secondary: 168, 85, 247;
+    --accent: 236, 72, 153;
+    --success: 34, 197, 94;
+    --warning: 245, 158, 11;
+    --dark: 15, 23, 42;
+    --light: 248, 250, 252;
+  }
+
+  .dark {
+    --primary: 129, 140, 248;
+    --secondary: 192, 132, 252;
+    --accent: 244, 114, 182;
+    --dark: 15, 23, 42;
+    --light: 30, 41, 59;
+  }
+
+  body {
+    @apply bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 px-8 py-3 rounded-xl font-semibold hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-2 rounded-xl font-semibold hover:from-pink-600 hover:to-rose-600 transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-slate-700/50;
+  }
+  
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-primary {
+    @apply bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spinSlow 8s linear infinite;
+  }
+  
+  .animate-shine {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background-size: 200% 100%;
+    animation: shine 2s infinite;
+  }
+  
+  .glass-effect {
+    @apply bg-white/30 dark:bg-slate-800/30 backdrop-blur-md border border-white/20 dark:border-slate-700/30;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+
+.wave-hand {
+  animation: wave 1s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #a855f7);
+  border-radius: 10px;
+}
