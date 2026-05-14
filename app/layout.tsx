@@ -1,7 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-//declare module '*.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import ParticleBackground from '@/components/ParticleBackground'
 
@@ -12,7 +11,13 @@ export const metadata: Metadata = {
   description: 'Layanan pembuatan website, aplikasi mobile, dan digital marketing berkualitas',
   keywords: 'jasa web, web development, mobile app, digital marketing',
   authors: [{ name: 'JasaWebPro' }],
-  viewport: 'width=device-width, initial-scale=1',
+  // viewport dihapus dari sini
+}
+
+// Tambahkan viewport export terpisah
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
