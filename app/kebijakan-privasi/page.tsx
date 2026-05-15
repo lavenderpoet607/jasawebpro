@@ -39,7 +39,7 @@ export default function KebijakanPrivasiPage() {
 
             <section>
               <h2 className="text-xl font-bold text-gray-900 mb-3">Kontak</h2>
-              <p className="text-gray-600">Jika ada pertanyaan tentang kebijakan privasi ini, silakan hubungi kami di: privacy@jasawebpro.com atau +62 812 3456 7890.</p>
+              <p className="text-gray-600">Jika ada pertanyaan tentang kebijakan privasi ini, silakan hubungi kami di: jasawebpro148@gmail.com atau +6281311685803.</p>
             </section>
           </div>
         </div>
